@@ -1,5 +1,5 @@
 module.exports = {
-  testURL: 'http://mtws.site:8000',
+  testURL: 'http://mtws.site',
   testEnvironment: './tests/PuppeteerEnvironment',
   verbose: false,
   globals: {
