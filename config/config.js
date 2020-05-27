@@ -35,23 +35,19 @@ export default defineConfig({
   // umi routes: https://umijs.org/docs/routing
   routes: [
     {
-        path: '/',
-        component: '../layouts/BlankLayout',
-        routes: [
-          {
-            path: 'stock/stockbond',
-            name: 'stockbond',
-            icon: 'stock',
-            component: 'Stock/StockBond',
-          },
-          {
-            path: '/',
-            redirect: '/stock/stockbond',
-          },
-          {
-            component: '404',
-          },
-        ],
+      path: '/',
+      component: '../layouts/BlankLayout',
+      routes: [
+        {
+          path: '/',
+          name: 'stockbond',
+          icon: 'stock',
+          component: 'Stock/StockBond',
+        },
+        {
+          component: '404',
+        },
+      ],
     },
   ],
   // Theme for antd: https://ant.design/docs/react/customize-theme-cn
@@ -85,8 +81,8 @@ export default defineConfig({
           const antdProPath = match[1].replace('.less', '');
           const arr = winPath(antdProPath)
             .split('/')
-            .map(a => a.replace(/([A-Z])/g, '-$1'))
-            .map(a => a.toLowerCase());
+            .map((a) => a.replace(/([A-Z])/g, '-$1'))
+            .map((a) => a.toLowerCase());
           return `antd-pro${arr.join('-')}-${localName}`.replace(/--/g, '-');
         }
 
